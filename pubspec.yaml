@@ -1,0 +1,70 @@
+name: campings_app
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  cached_network_image: ^3.2.3
+  card_swiper: ^3.0.1
+  concentric_transition: ^1.0.3
+  connectivity_plus: ^4.0.1
+  dropdown_button2: ^2.1.4
+  flutter:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_login: ^4.2.0
+  flutter_map: ^5.0.0
+  flutter_map_marker_popup: ^5.2.0
+  flutter_rating_bar: ^4.0.1
+  flutter_svg: ^2.0.7
+  geocoding: ^2.1.0
+  geolocator: ^9.0.2
+  google_fonts: ^5.1.0
+  image_picker: ^1.0.1
+  intl: ^0.18.1
+  latlng: ^1.0.0
+  latlong2: ^0.9.0
+  map_launcher: ^2.5.0+1
+  provider: ^6.0.5
+  salomon_bottom_bar: ^3.3.2
+  shared_preferences: ^2.2.0
+  shimmer: ^3.0.0
+  supabase_flutter: ^1.10.9
+  url_launcher: ^6.1.12
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  # ios: true
+  image_path: "assets/app_icon/orig_icon.png"
+  background_color: '#505D2F'
+  adaptive_icon_background: "assets/app_icon/icon_background.png" 
+  adaptive_icon_foreground: "assets/app_icon/icon_foreground.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  # web:
+  #   generate: true
+  #   image_path: "path/to/image.png"
+  #   background_color: "#hexcode"
+  #   theme_color: "#hexcode"
+  # windows:
+  #   generate: true
+  #   image_path: "path/to/image.png"
+  #   icon_size: 48 # min:48, max:256, default: 48
+  # macos:
+  #   generate: true
+  #   image_path: "path/to/image.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/svg/
+    - assets/logo/
+    - assets/images/
+    - assets/app_icon/
