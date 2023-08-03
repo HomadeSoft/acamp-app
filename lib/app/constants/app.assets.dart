@@ -13,6 +13,7 @@ class AppAssets {
   static String wifi = "assets/images/network.png";
   static String appNameLogo = "assets/app_icon/acamp.png";
   static String appNameLogoTitle = "assets/app_icon/acamp_title.png";
+  static String appRegion = "assets/image/argentina.png";
 
   //
   static String defaultImage =
