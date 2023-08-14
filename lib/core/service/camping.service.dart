@@ -1,6 +1,7 @@
 import 'package:campings_app/core/api/supabase.api.dart';
 import 'package:campings_app/core/models/camping.model.dart';
 import 'package:campings_app/core/service/maps.service.dart';
+import 'package:latlong2/latlong.dart';
 
 class CampingService {
   Future<List<CampingModel>> getAllCampings() async {
@@ -42,11 +43,9 @@ class CampingService {
   }
 
   Future<List<CampingModel>> getNearbyCampings() async {
+    LatLng location = await MapsService().getCurrentLocation();
     var response = await SupabaseAPI.supabaseClient.rpc('nearby_campings',
-        params: {
-          'lat': MapsService().intialLat,
-          'long': MapsService().intialLong
-        });
+        params: {'lat': location.latitude, 'long': location.longitude});
     List<CampingModel> campingList = (response as List<dynamic>)
         .map((element) => CampingModel.fromJson(element))
         .toList();

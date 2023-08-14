@@ -17,29 +17,27 @@ class CampingScreen extends StatelessWidget {
     var themeFlag = themeNotifier.darkTheme;
     return Scaffold(
       backgroundColor: themeFlag ? AppColors.mirage : AppColors.creamColor,
-      body: Center(
-        child: SingleChildScrollView(
-          child: Consumer<CampingNotifier>(
-            builder: (context, notifier, _) {
-              return FutureBuilder(
-                future: notifier.getSpecificCamping(
-                    campingId: campingScreenArgs.campingId),
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting ||
-                      !snapshot.hasData) {
-                    return const Center(child: CircularProgressIndicator());
-                  } else {
-                    CampingModel camping = snapshot.data;
-                    return buildCampingData(
-                      context: context,
-                      campingModel: camping,
-                      themeFlag: themeFlag,
-                    );
-                  }
-                },
-              );
-            },
-          ),
+      body: SingleChildScrollView(
+        child: Consumer<CampingNotifier>(
+          builder: (context, notifier, _) {
+            return FutureBuilder(
+              future: notifier.getSpecificCamping(
+                  campingId: campingScreenArgs.campingId),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting ||
+                    !snapshot.hasData) {
+                  return const Center(child: CircularProgressIndicator());
+                } else {
+                  CampingModel camping = snapshot.data;
+                  return buildCampingData(
+                    context: context,
+                    campingModel: camping,
+                    themeFlag: themeFlag,
+                  );
+                }
+              },
+            );
+          },
         ),
       ),
     );

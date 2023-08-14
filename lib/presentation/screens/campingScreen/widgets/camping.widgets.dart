@@ -113,8 +113,8 @@ Widget buildCampingData({
                   itemCount: campingModel.campingAmenitiesImages.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: ((context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(left: 5, right: 5),
+                    return SizedBox(
+                      width: 100,
                       child: Column(
                         children: [
                           Card(
@@ -146,7 +146,9 @@ Widget buildCampingData({
                           ),
                           Text(
                             campingModel.campingAmenitiesText[index],
+                            maxLines: 2,
                             style: const TextStyle(color: AppColors.yellowish),
+                            textAlign: TextAlign.center,
                           )
                         ],
                       ),
