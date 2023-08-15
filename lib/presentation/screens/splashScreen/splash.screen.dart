@@ -72,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen> {
               fit: BoxFit.fitWidth,
             ),
             Image.asset(
-              AppAssets.appNameLogo,
+              AppAssets.appRegion,
               width: 50,
               fit: BoxFit.fitWidth,
             ),
