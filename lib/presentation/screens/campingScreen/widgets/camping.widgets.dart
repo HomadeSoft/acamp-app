@@ -71,6 +71,7 @@ Widget buildCampingData({
                         ),
                         Text(
                           campingModel.campingAddress,
+                          maxLines: 2,
                           style: TextStyle(
                             color: themeFlag
                                 ? AppColors.creamColor
@@ -159,21 +160,23 @@ Widget buildCampingData({
               const SizedBox(
                 height: 5,
               ),
-              Text(
-                Strings.description,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: themeFlag ? AppColors.creamColor : AppColors.mirage,
+              if (campingModel.campingDescription.isNotEmpty) ...[
+                Text(
+                  Strings.description,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: themeFlag ? AppColors.creamColor : AppColors.mirage,
+                  ),
                 ),
-              ),
-              Text(
-                campingModel.campingDescription,
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  color: themeFlag ? AppColors.creamColor : AppColors.mirage,
-                ),
-              ),
+                Text(
+                  campingModel.campingDescription,
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    color: themeFlag ? AppColors.creamColor : AppColors.mirage,
+                  ),
+                )
+              ],
               const SizedBox(
                 height: 10,
               ),
